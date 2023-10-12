@@ -1,6 +1,10 @@
 # Repository coral_popgen
 Developing spatially explicit model to simulate the response of coral colonies to changing SST. 
 
+
+The first step is to have a simple model we understand well, i.e., we can understand the outcome and predictions given a small set of assumptions and causes to changing SST.
+We then include realism, i. e., empirical parameters, from different angles to explore the simple model with each of these angles. For example, we add realistic spatial structure of populations and run the simulations under this ungle of realism. We can add symbionts, the coral-algae interaction, and explore new predictions. How robust the single model is to more realistic scenarios? What are the predictions that can be useful to test from each of the models with different levels of complexity?  
+
 # Questions
 
 # References
