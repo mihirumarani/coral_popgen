@@ -36,3 +36,6 @@ https://opentraits.org/datasets/coral-traits.html
 
 R-package 
 https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12382
+
+Data from Chris data fit (as committed by Mihir)
+https://drive.switch.ch/index.php/s/Lhv9GVXDXvnipT5
