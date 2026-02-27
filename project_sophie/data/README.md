@@ -23,3 +23,8 @@ page inaccessible, includes symbionts
 
 # https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0228498
 ! Red Sea included, includes symbionts, bleaching
+
+---
+
+# https://www.nature.com/articles/s42003-025-09329-5
+not a database, but paper with similar research
