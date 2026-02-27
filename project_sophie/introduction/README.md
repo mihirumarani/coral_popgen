@@ -14,7 +14,7 @@ how it buffers warming effects -> mechanisms?
 # Stress and Bleaching / Warming Effects
 why and how -> expulsion of algae
 other environmental and biological factors affecting corals besides temperature
+Thermal tolerance and effect on fitness
 
 # PLUS
 SST projections and RCP
-Thermal tolerance and effect on fitness
