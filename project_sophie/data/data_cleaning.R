@@ -37,17 +37,29 @@ chris_data <- chris_data %>%
 
 ###
 
-# list of all species in alphabetical order
-list_species <- chris_data$specie_name
-list_species_sorted <- sort(unique(list_species))
-writeLines(list_species_sorted, "list_species_sorted.txt")
-
 # list of all location in alphabetical order
-list_location <- chris_data$location_name
-list_location_sorted <- sort(unique(list_location))
-writeLines(list_location_sorted, "list_location_sorted.txt")
+list_all_location <- chris_data$location_name
+list_all_location_sorted <- sort(unique(list_all_location))
+writeLines(list_all_location_sorted, "list_all_location_sorted.txt")
+
+# list of all species in alphabetical order
+list_all_species <- chris_data$specie_name
+list_all_species_sorted <- sort(unique(list_all_species))
+writeLines(list_all_species_sorted, "list_all_species_sorted.txt")
+
+###
 
 # data of only red sea
 chris_data_red_sea <- subset(chris_data, grepl("Red Sea", location_name, ignore.case = TRUE))
 write.csv(chris_data_red_sea , "chris_data_red_sea.csv", row.names = FALSE)
+
+# list of all red sea location in alphabetical order
+list_location_red_sea <- chris_data_red_sea$location_name
+list_location_sorted_red_sea <- sort(unique(list_location_red_sea))
+writeLines(list_location_sorted_red_sea, "list_location_sorted_red_sea.txt")
+
+# list of all red sea species in alphabetical order
+list_species_red_sea <- chris_data_red_sea$specie_name
+list_species_sorted_red_sea <- sort(unique(list_species_red_sea))
+writeLines(list_species_sorted_red_sea, "list_species_sorted_red_sea.txt")
 
