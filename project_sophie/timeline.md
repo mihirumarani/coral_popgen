@@ -1,4 +1,21 @@
-### Timetable (by week)
+## Timetable (by week)
+
+week = Monday of week
+0 = 23.02
+1 = 02.03
+2 = 09.03
+3 = 16.03
+4 = 23.03
+5 = 30.03
+6 = 06.04
+7 = 13.04
+8 = 20.04
+9 = 27.04
+10 = 04.05
+11 = 11.05
+12 = 18.05
+13 = 25.05
+
 # 0. admin & co
 # 1. adding and cleaning of coral-algae database: 
   * List at coral_popgen/project_sophie/data
@@ -20,4 +37,5 @@
   * Clustering analysis accounting for phylogenetics?
 # 10. consolidating writing methods
 # 11. consolidating introduction  and results writing - end of week first draft
-# 12. buffer - end of week final draft
+# 12. final draft submission
+# 13. buffer
