@@ -30,3 +30,6 @@ database for traits and locations
 
 # https://www.coralsoftheworld.org/page/home/
 taxonomy by location
+
+# https://recifs.epfl.ch/
+general ocean data
