@@ -12,7 +12,7 @@ includes symbionts
 # https://dashboard.coraldatabase.gov.mv/
 Maldives only
 
-# https://allencoralatlas.org/atlas/#2.48/-14.8736/150.6715
+# https://allencoralatlas.org/atlas/#2.48/-14.8736/150.6715 - account made
 Australia and Melanesia regions, bleaching
 
 # https://symportal.org/
