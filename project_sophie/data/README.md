@@ -26,3 +26,6 @@ page inaccessible, includes symbionts
 
 # https://www.coraltraits.org/
 database for traits and locations
+
+# https://www.coralsoftheworld.org/page/home/
+taxonomy by location
