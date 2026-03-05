@@ -34,3 +34,6 @@ taxonomy by location
 # https://recifs.epfl.ch/
 general ocean data
 --- data committed to switchdrive
+
+# https://www.bco-dmo.org/dataset/773466
+bleaching
