@@ -19,4 +19,4 @@ https://onlinelibrary.wiley.com/doi/epdf/10.1111/jbi.13672
 possible model organism, no access to data though
 
 https://onlinelibrary.wiley.com/doi/10.1111/jbi.12913
-diversity of coral & symbionts in red sea, acces to data
+diversity of coral & symbionts in red sea, access to data
