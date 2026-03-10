@@ -1,12 +1,12 @@
 # Data location: 
-https://drive.switch.ch/index.php/s/sUi47xoUBwybv0t
+https://drive.switch.ch/index.php/s/rIO3G0nFQYQfDIC
 
 # Paper location:
-N/A
+https://drive.switch.ch/index.php/s/0wjwSxzCW6KJhca
 
 ## Original data: 
-mihir\_chris\_data.csv
+.csv
 
 ## Cleaned data:
-mihir\_chris\_data\_red\_sea.csv
-- includes all traits, no specific symbiont data
+.csv
+- includes
