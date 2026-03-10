@@ -5,8 +5,8 @@ https://drive.switch.ch/index.php/s/2iYiIU2kdZWwhr0
 https://drive.switch.ch/index.php/s/0wjwSxzCW6KJhca
 
 ## Original data: 
-.csv
+abund_and_meta.txt
 
 ## Cleaned data:
-.csv
-- includes
+transposed_abund_and_meta.csv
+- includes clades and ITS2
