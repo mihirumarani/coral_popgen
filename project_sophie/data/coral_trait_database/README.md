@@ -1,12 +1,13 @@
 # Data location: 
-https://drive.switch.ch/index.php/s/sUi47xoUBwybv0t
+https://drive.switch.ch/index.php/s/6DAernRT1J99tPA
 
 # Paper location:
 N/A
 
 ## Original data: 
-mihir\_chris\_data.csv
+coral_trait_database.csv
 
 ## Cleaned data:
-mihir\_chris\_data\_red\_sea.csv
-- includes all traits, no specific symbiont data
+coral_trait_database_red_sea.csv
+- includes only specific symbiont data
+- no link to temperature found
