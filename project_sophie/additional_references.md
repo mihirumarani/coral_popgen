@@ -1,17 +1,23 @@
 # Additional references that may be of interest
-! high interest
+https://drive.switch.ch/index.php/s/0wjwSxzCW6KJhca
 
-https://www.science.org/doi/10.1126/science.adk4532
+HoeghGuldberg2023
 SST projections
 
-https://www.scopus.com/pages/publications/85139969826?origin=resultslist
+Kitchen2022
 regarding colonisation
 
-https://www.sciencedirect.com/science/article/pii/S0272771414002066?pes=vor&utm_source=scopus&getft_integrator=scopus
+Hendriks2015
 links symbionts and ocean acidification
 
-https://www.scopus.com/pages/publications/84872514968?origin=resultslist
-! symbiont density and vulnerability 
+Cunning2012
+symbiont density and vulnerability 
 
-https://www.scopus.com/pages/publications/84896710578?origin=resultslist
+Hughes2013
 additional buffering mechanism through heterotrophic compensation
+
+Terraneo2019
+possible model organism, no access to data though
+
+Ziegler2017
+diversity of coral & symbionts in red sea, access to data
