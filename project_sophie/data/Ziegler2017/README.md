@@ -4,9 +4,9 @@ https://drive.switch.ch/index.php/s/ZhqFQVa300Kn5sV
 # Paper location:
 https://drive.switch.ch/index.php/s/0wjwSxzCW6KJhca
 
-## Original data: 
-.csv
+## "Original" data: 
+adapted_appendixs1.csv and adapted_appendixs5.csv
 
 ## Cleaned data:
-.csv
-- includes
+joined_data_red_sea.csv
+- includes date, depth, and ITS2 data
