@@ -48,3 +48,22 @@ for (col in common_cols) {
 }
 
 write.csv(joined_data_red_sea, "joined_data_red_sea.csv", row.names = FALSE)
+
+# extract major subclade names
+subclade_data <- joined_data_red_sea[, subclade_cols]
+max_indices <- max.col(subclade_data, ties.method = "first")
+major_sublclade <- colnames(subclade_data)[max_indices]
+proportion <- apply(subclade_data, 1, max)
+cleaned_joined_data_red_sea <- cbind(
+  joined_data_red_sea[, general_cols],
+  Major_Sublclade = major_sublclade,
+  Proportion = proportion
+)
+
+# clean naming of subclades
+cleaned_joined_data_red_sea$Major_Sublclade <- sub("^GS_", "", cleaned_joined_data_red_sea$Major_Sublclade)
+
+# add clade row
+cleaned_joined_data_red_sea$Major_Clade <- substr(cleaned_joined_data_red_sea$Major_Sublclade, 1, 1)
+
+write.csv(joined_data_red_sea, "cleaned_joined_data_red_sea.csv", row.names = FALSE)
