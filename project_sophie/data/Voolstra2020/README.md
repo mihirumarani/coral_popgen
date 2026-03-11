@@ -5,8 +5,8 @@ https://drive.switch.ch/index.php/s/Jz7ceAntxF9sDqW
 https://drive.switch.ch/index.php/s/0wjwSxzCW6KJhca
 
 ## Original data: 
-.csv
+ChlA_data.txt
 
 ## Cleaned data:
-.csv
-- includes
+ChlA_data.csv
+- includes info about chlorophyll
