@@ -10,3 +10,5 @@ abund_and_meta.txt
 ## Cleaned data:
 transposed_abund_and_meta.csv
 - includes clades and ITS2
+
+- associated species means symbiont species
