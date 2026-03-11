@@ -8,5 +8,5 @@ https://drive.switch.ch/index.php/s/0wjwSxzCW6KJhca
 adapted_appendixs1.csv and adapted_appendixs5.csv
 
 ## Cleaned data:
-joined_data_red_sea.csv
-- includes date, depth, and ITS2 data
+cleaned_joined_data_red_sea.csv
+- includes date, depth, and cleaned ITS2 data
