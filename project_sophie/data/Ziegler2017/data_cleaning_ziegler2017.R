@@ -50,6 +50,8 @@ for (col in common_cols) {
 write.csv(joined_data_red_sea, "joined_data_red_sea.csv", row.names = FALSE)
 
 # extract major subclade names
+general_cols <- 1:10
+subclade_cols <- 11:ncol(joined_data_red_sea)
 subclade_data <- joined_data_red_sea[, subclade_cols]
 max_indices <- max.col(subclade_data, ties.method = "first")
 major_sublclade <- colnames(subclade_data)[max_indices]
@@ -66,4 +68,5 @@ cleaned_joined_data_red_sea$Major_Sublclade <- sub("^GS_", "", cleaned_joined_da
 # add clade row
 cleaned_joined_data_red_sea$Major_Clade <- substr(cleaned_joined_data_red_sea$Major_Sublclade, 1, 1)
 
-write.csv(joined_data_red_sea, "cleaned_joined_data_red_sea.csv", row.names = FALSE)
+write.csv(cleaned_joined_data_red_sea, "cleaned_joined_data_red_sea.csv", row.names = FALSE)
+
