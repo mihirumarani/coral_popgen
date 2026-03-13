@@ -1,8 +1,9 @@
 # Data location: 
 https://drive.switch.ch/index.php/s/mkD1EPTaR6hYZqi
 
-# Paper location:
-https://drive.switch.ch/index.php/s/bX0JuGVGaGl4KQe
+# Original Data location:
+https://www.bco-dmo.org/dataset/863786
+https://www.bco-dmo.org/dataset/863800
 
 ## Original data:
 supplementary_data.doc
