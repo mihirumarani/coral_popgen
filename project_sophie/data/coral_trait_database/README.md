@@ -1,8 +1,8 @@
 # Data location: 
 https://drive.switch.ch/index.php/s/6DAernRT1J99tPA
 
-# Paper location:
-N/A
+# Original Data location:
+https://www.coraltraits.org/
 
 ## Original data: 
 coral_trait_database.csv
