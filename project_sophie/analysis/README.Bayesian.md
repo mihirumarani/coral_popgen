@@ -1,3 +1,10 @@
+# Current Steps
+A. Finding approximations for SST for the locations we have
+B. Ensuring location points are sampled equally enough - "proven" how? something about transition testing?
+C. Fitness Function for presence/absence data - how exactly? R? on what data, what variables?
+D. Rarefaction of data - using R?
+
+---
 
 Bayesian Blocks to detect "regime shifts" or sharp transitions in coral symbiont data. Instead of using a sliding window (which often smears results), Bayesian Blocks identifies the optimal locations for "breakpoints" where the species composition changes significantly along the temperature gradient.
 
@@ -64,7 +71,7 @@ Since your previous work links **Genotype-to-Phenotype Architecture (GPA)** to b
 
 ### Summary Checklist
 
-1. Standardize: Ensure your temperature points are sampled equally enough across locaations to justify a transition test.
+1. Standardize: Ensure your temperature points are sampled equally enough across locations to justify a transition test.
 2. Fitness Function: Use `fitness='events'` for presence/absence data or `fitness='measures'` for continuous abundance data.
 3. Validation: Use the Rarefaction samplings approach -- re-run the Bayesian blocks on your data multiple times to see if the transition temperatures remain stable.
 
