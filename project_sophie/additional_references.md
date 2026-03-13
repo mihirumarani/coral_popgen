@@ -18,6 +18,3 @@ additional buffering mechanism through heterotrophic compensation
 
 Terraneo2019
 possible model organism, no access to data though
-
-Ziegler2017
-diversity of coral & symbionts in red sea, access to data
