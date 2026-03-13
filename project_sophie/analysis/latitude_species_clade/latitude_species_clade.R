@@ -132,6 +132,7 @@ combined_lsc <- rbind(b04_lsc, ctd_lsc, h20_lsc, z17_lsc)
 genus_list <- split(combined_lsc, combined_lsc$Genus)
 
 # filter genus with too little data
+library(dplyr)
 filtered_data <- combined_lsc %>%
   filter(!Genus %in% c("Sclerophytum", "Milleporidae")) %>%  # exclude unwanted genera
   group_by(Genus) %>%
