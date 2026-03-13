@@ -19,6 +19,8 @@ week = Monday of week
 # 0. admin & co
 # 1. adding and cleaning of coral-algae database: 
   * List at coral_popgen/project_sophie/data
+    
+# THIS WEEK
 # 2. merging coral-algae database: 
   * connecting coral to symbionts (well known coral-symbionts model system OR merging corals to symbionts connecting different database)
 # 3. clean database: 
