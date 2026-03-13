@@ -7,9 +7,6 @@ SST projections
 Kitchen2022
 regarding colonisation
 
-Hendriks2015
-links symbionts and ocean acidification
-
 Cunning2012
 symbiont density and vulnerability 
 
