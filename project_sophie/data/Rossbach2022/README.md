@@ -2,7 +2,7 @@
 https://drive.switch.ch/index.php/s/2iYiIU2kdZWwhr0
 
 # Paper location:
-https://drive.switch.ch/index.php/s/0wjwSxzCW6KJhca
+https://drive.switch.ch/index.php/s/bX0JuGVGaGl4KQe
 
 ## Original data: 
 abund_and_meta.txt
