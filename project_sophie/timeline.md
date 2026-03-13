@@ -23,6 +23,8 @@ week = Monday of week
 # THIS WEEK
 # 2. merging coral-algae database: 
   * connecting coral to symbionts (well known coral-symbionts model system OR merging corals to symbionts connecting different database)
+
+# NEXT WEEK
 # 3. clean database: 
   * Model system VS coral-symbionts network
 # 4. specialisation gradient analysis: 
