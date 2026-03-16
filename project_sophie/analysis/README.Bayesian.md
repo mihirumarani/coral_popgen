@@ -4,10 +4,13 @@ A. Finding approximations for SST for the locations we have
 
 B. Ensuring location points are sampled equally enough - "proven" how? something about transition testing?
 
-C. Fitness Function for presence/absence data - how exactly? R? on what data, what variables?
+loop x1000 (
 
-D. Rarefaction of data - using R?
+C. Rarefaction of data - using R?
 
+D. Bayseian Blocks (includes fitness function) - Multi-Clade Switching Probability code
+
+)
 ---
 
 Bayesian Blocks to detect "regime shifts" or sharp transitions in coral symbiont data. Instead of using a sliding window (which often smears results), Bayesian Blocks identifies the optimal locations for "breakpoints" where the species composition changes significantly along the temperature gradient.
