@@ -1,7 +1,11 @@
 # Current Steps
+
 A. Finding approximations for SST for the locations we have
+
 B. Ensuring location points are sampled equally enough - "proven" how? something about transition testing?
+
 C. Fitness Function for presence/absence data - how exactly? R? on what data, what variables?
+
 D. Rarefaction of data - using R?
 
 ---
