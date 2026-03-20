@@ -49,6 +49,8 @@ colnames(h20_lsc)[colnames(h20_lsc) == "reef"] <- "Location"
 # z17 remove data with no clade, rename leather coral, and rename columns
 z17_lsc <- z17_lsc[-c(193), ]
 z17_lsc$Genus[z17_lsc$Genus == "Leather Coral"] <- "Sarcophyton"
+z17_lsc$Genus[z17_lsc$Genus == "Symphyllia"] <- "Lobophyllia"
+z17_lsc$Genus[z17_lsc$Genus == "Tubinaria"] <- "Turbinaria"
 colnames(z17_lsc)[colnames(z17_lsc) == "Major_Clade"] <- "Clade"
 colnames(z17_lsc)[colnames(z17_lsc) == "Reef"] <- "Location"
 
@@ -141,7 +143,7 @@ genus_list <- split(filtered_data, filtered_data$Genus)
 
 ### mao creation
 
-install.packages("patchwork")  
+# install.packages("patchwork")  
 
 library(sf)
 library(dplyr)
@@ -237,7 +239,7 @@ plot_genus_map <- function(genus_data, genus_name) {
 
 # Your desired order and page setup
 desired_order <- c(
-  "Favia", "Fungia", "Lobophytum", "Pavona", "Sinularia", "Tubinaria",
+  "Favia", "Fungia", "Lobophytum", "Pavona", "Sinularia", "Turbinaria",
   "Astreopora", "Diploastrea", "Leptoria", "Porites", "Xenia",
   "Acropora", "Echinopora", "Goniastrea", "Sarcophyton",
   "Galaxea", "Gardineroseris", "Montipora", "Pocillopora", "Seriatopora", "Stylophora"
