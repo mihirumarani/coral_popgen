@@ -49,6 +49,8 @@ colnames(h20_lc)[colnames(h20_lc) == "reef"] <- "Location"
 # z17 remove data with no clade, rename leather coral, and rename columns
 z17_lc <- z17_lc[-c(193), ]
 z17_lc$Genus[z17_lc$Genus == "Leather Coral"] <- "Sarcophyton"
+z17_lc$Genus[z17_lc$Genus == "Symphyllia"] <- "Lobophyllia"
+z17_lc$Genus[z17_lc$Genus == "Tubinaria"] <- "Turbinaria"
 colnames(z17_lc)[colnames(z17_lc) == "Major_Clade"] <- "Clade"
 colnames(z17_lc)[colnames(z17_lc) == "Reef"] <- "Location"
 
@@ -142,7 +144,7 @@ combined_lc <- rbind(b04_lc, ctd_lc, h20_lc, z17_lc)
 
 # map creation
 
-install.packages(c("ggplot2", "sf", "maps"))
+# install.packages(c("ggplot2", "sf", "maps"))
 library(ggplot2)
 library(sf)
 library(maps)
@@ -169,23 +171,25 @@ ggplot() +
   )
 
 # pie map 
+
 install.packages(c("ggplot2", "sf", "scatterpie", "maps"))
-library(ggplot2)
-library(sf)
-library(scatterpie)
+
 library(dplyr)
+library(tidyr)
+library(sf)
+library(ggplot2)
+library(scatterpie)
 
-# Convert combined_lc to sf (assuming already done)
-lc_sf <- st_as_sf(combined_lc, coords = c("longitude", "latitude"), crs = 4326)
-
-# Aggregate counts of Clades per location
+# Aggregate Clade counts per location
 clade_summary <- combined_lc %>%
   group_by(longitude, latitude) %>%
   count(Clade) %>%
-  tidyr::pivot_wider(names_from = Clade, values_from = n, values_fill = 0)
+  pivot_wider(names_from = Clade, values_from = n, values_fill = 0) %>%
+  ungroup()
 
-# Join with sf points (optional, but convenient)
-clade_sf <- st_as_sf(clade_summary, coords = c("longitude", "latitude"), crs = 4326)
+# Add coordinate columns explicitly (needed for scatterpie)
+clade_summary <- clade_summary %>%
+  mutate(x = longitude, y = latitude)
 
 # Plot world map base
 world <- st_as_sf(maps::map("world", plot = FALSE, fill = TRUE))
@@ -193,17 +197,71 @@ world <- st_as_sf(maps::map("world", plot = FALSE, fill = TRUE))
 ggplot() +
   geom_sf(data = world, fill = "antiquewhite") +
   geom_scatterpie(
-    aes(x = st_coordinates(clade_sf)[,1], y = st_coordinates(clade_sf)[,2]),
+    aes(x = x, y = y),
     data = clade_summary,
     cols = c("A", "C", "D"),
-    color = NA,    # no border around pies
+    color = NA,
     alpha = 0.8,
-    pie_scale = 0.5  # Adjust size of pies
+    pie_scale = 4
   ) +
   coord_sf(xlim = c(32, 44), ylim = c(12, 30)) +
   theme_minimal() +
   labs(title = "Clade Composition by Location in the Red Sea") +
   theme(legend.position = "right")
 
+# interactive pie map 
 
+library(leaflet)
+library(dplyr)
+library(tidyr)
+
+# Prepare summarized clade data per location
+clade_summary <- combined_lc %>%
+  group_by(longitude, latitude, Clade) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  pivot_wider(names_from = Clade, values_from = count, values_fill = 0)
+
+# Create popup text for each clade (optional, can be customized)
+clade_summary <- clade_summary %>%
+  mutate(
+    popup_A = paste0("<b>Location:</b> ", longitude, ", ", latitude, "<br><b>Clade A:</b> ", A),
+    popup_C = paste0("<b>Location:</b> ", longitude, ", ", latitude, "<br><b>Clade C:</b> ", C),
+    popup_D = paste0("<b>Location:</b> ", longitude, ", ", latitude, "<br><b>Clade D:</b> ", D)
+  )
+
+n <- leaflet(clade_summary) %>%
+  addTiles() %>%
+  
+  addCircleMarkers(
+    lng = ~longitude,
+    lat = ~latitude,
+    radius = ~sqrt(A) * 3,
+    popup = ~popup_A,
+    group = "Clade A"
+  ) %>%
+  
+  addCircleMarkers(
+    lng = ~longitude,
+    lat = ~latitude,
+    radius = ~sqrt(C) * 3,
+    popup = ~popup_C,
+    group = "Clade C"
+  ) %>%
+  
+  addCircleMarkers(
+    lng = ~longitude,
+    lat = ~latitude,
+    radius = ~sqrt(D) * 3,
+    popup = ~popup_D,
+    group = "Clade D"
+  ) %>%
+  
+  addLayersControl(
+    overlayGroups = c("Clade A", "Clade C", "Clade D"),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+
+library(htmlwidgets)
+
+saveWidget(n, "C:/Users/sophi/SynologyDrive/Documents/GitHub/coral_popgen/project_sophie/analysis/locations_clade/leaflet_map_locations_clades.html", selfcontained = TRUE)
 
