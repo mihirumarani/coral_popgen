@@ -1,33 +1,3 @@
-library(dplyr)
-library(lubridate)
-
-# Assuming df_clean is your cleaned data frame with lon, lat, time, sst
-
-# Convert time column to Date class if not already
-df_clean$time <- as.Date(df_clean$time)
-
-# Extract year from the time column
-df_clean$year <- year(df_clean$time)
-
-# 1. Calculate average sst per year per lon/lat
-avg_sst_yearly <- df_clean %>%
-  group_by(lon, lat, year) %>%
-  summarise(avg_sst = mean(sst, na.rm = TRUE)) %>%
-  ungroup()
-
-# 2. Calculate max sst per year per lon/lat
-max_sst_yearly <- df_clean %>%
-  group_by(lon, lat, year) %>%
-  summarise(max_sst = max(sst, na.rm = TRUE)) %>%
-  ungroup()
-
-# Optionally save these to CSV files
-write.csv(avg_sst_yearly, "avg_sst_per_year_red_sea.csv", row.names = FALSE)
-write.csv(max_sst_yearly, "max_sst_per_year_red_sea.csv", row.names = FALSE)
-
-
-###
-
 
 # Load required libraries
 library(ncdf4)
@@ -137,8 +107,8 @@ library(maps)
 
 sst_2017 <- read.csv("avg_sst_per_year_red_sea_2017.csv")
 
-lon_limits <- c(32, 45)
-lat_limits <- c(12.5, 30)
+lon_limits <- c(32, 44.375)
+lat_limits <- c(13.325, 30)
 
 # Get world map data
 world <- map_data("world")
@@ -158,29 +128,32 @@ p <- ggplot() +
   
   # Color scale (your flipped version)
   scale_fill_gradientn(
-    name = "Avg SST (°C)",
+    name = "Avgerage SST °C",
+    # colors = c( "#4575b4", "#74add1", "#abd9e9", "#e0f3f8", "#fff5cc", "#ffd700", "#ff8c00", "#ff4500"),
     colors = c(
-      "#4575b4", "#74add1", "#abd9e9", "#e0f3f8",
-      "#fff5cc", "#ffd700", "#ff8c00", "#ff4500"
+      "#477a85", "#679aa1", "#86babd", "#bddad7", "#f4faf0",
+      "#f3e6d9", "#f0bdb3", "#e69591", "#c76b6c"
     ),
-    values = scales::rescale(c(0, 0.1, 0.25, 0.4, 0.5, 0.65, 0.8, 1))
+    values = scales::rescale(c(0.00, 0.15, 0.275, 0.375, 0.525, 0.65, 0.8, 0.9, 1.00))
   ) +
   
   coord_fixed(xlim = lon_limits, ylim = lat_limits, ratio = 1.3) +
   
   labs(
-    title = "Average Sea Surface Temperature in the Red Sea - 2017",
     x = "Longitude",
     y = "Latitude"
   ) +
   
   theme_minimal() +
   theme(
-    axis.title = element_text(size = 12),
-    plot.title = element_text(size = 13, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 16),
+    axis.text = element_text(size = 16),          # axis tick labels
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    legend.title = element_text(size = 16),       # legend title size
+    legend.text = element_text(size = 16),        # legend labels size
     legend.position = "bottom",
-    legend.key.width = unit(4, "cm"),
-    legend.key.height = unit(0.6, "cm")
+    legend.key.width = unit(6, "cm"),
+    legend.key.height = unit(1, "cm")
   ) +
   
   guides(
@@ -194,4 +167,4 @@ p <- ggplot() +
 
 print(p)
 
-ggsave("red_sea_sst_map_2017.pdf", plot = p, width = 6, height = 10)
+ggsave("heat_map.pdf", plot = p, width = 6, height = 10)
