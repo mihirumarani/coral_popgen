@@ -49,6 +49,8 @@ colnames(h20_lsc)[colnames(h20_lsc) == "reef"] <- "Location"
 # z17 remove data with no clade, rename leather coral, and rename columns
 z17_lsc <- z17_lsc[-c(193), ]
 z17_lsc$Genus[z17_lsc$Genus == "Leather Coral"] <- "Sarcophyton"
+z17_lsc$Genus[z17_lsc$Genus == "Symphyllia"] <- "Lobophyllia"
+z17_lsc$Genus[z17_lsc$Genus == "Tubinaria"] <- "Turbinaria"
 colnames(z17_lsc)[colnames(z17_lsc) == "Major_Clade"] <- "Clade"
 colnames(z17_lsc)[colnames(z17_lsc) == "Reef"] <- "Location"
 
@@ -260,7 +262,7 @@ beta_model_3D <- betareg(prop ~ latitude, data = cladeD_data)
 
 summary(beta_model_3D)
 
-sink("beta_models_summary.txt")
+sink("beta_models_summary_3.txt")
 cat("Summary of beta_model_3A\n")
 print(summary(beta_model_3A))
 cat("\n\n")

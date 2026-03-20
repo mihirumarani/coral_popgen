@@ -111,7 +111,7 @@ Genus: Stylophora
 1 (Intercept)  -0.721      3.68    -0.196    0.845
 2 latitude      0.0133     0.165    0.0804   0.936
 
-Genus: Tubinaria 
+Genus: Turbinaria 
 No results (NULL)
 
 Genus: Xenia 
