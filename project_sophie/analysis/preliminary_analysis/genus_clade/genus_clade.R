@@ -59,6 +59,8 @@ colnames(h20_gc)[colnames(h20_gc) == "clade"] <- "Clade"
 # z17 remove data with no clade, rename leather coral, and rename columns
 z17_gc <- z17_gc[-c(193), ]
 z17_gc$Genus[z17_gc$Genus == "Leather Coral"] <- "Sarcophyton"
+z17_gc$Genus[z17_gc$Genus == "Symphyllia"] <- "Lobophyllia"
+z17_gc$Genus[z17_gc$Genus == "Tubinaria"] <- "Turbinaria"
 colnames(z17_gc)[colnames(z17_gc) == "Major_Clade"] <- "Clade"
 
 ###
