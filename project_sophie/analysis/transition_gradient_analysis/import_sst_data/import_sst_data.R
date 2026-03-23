@@ -106,6 +106,7 @@ library(dplyr)
 library(maps)
 
 sst_2017 <- read.csv("avg_sst_per_year_red_sea_2017.csv")
+all_unique_locations <- read.csv("all_unique_locations_with_sst.csv")
 
 lon_limits <- c(32, 44.375)
 lat_limits <- c(13.325, 30)
@@ -124,6 +125,16 @@ p <- ggplot() +
     fill = "grey95",
     color = "black",
     size = 0.2
+  ) +
+  
+  # Points layer from all_unique_locations dataset
+  geom_point(
+    data = all_unique_locations,
+    aes(x = Longitude, y = Latitude),
+    shape = 18,
+    color = "black",      # You can choose any color
+    size = 4,           # Adjust size as needed
+    alpha = 0.7         # Optional transparency
   ) +
   
   # Color scale (your flipped version)
