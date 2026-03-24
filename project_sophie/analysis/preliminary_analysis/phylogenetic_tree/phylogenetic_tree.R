@@ -26,7 +26,7 @@ plot(
   edge.width = 2,
   cex = 0.8,
   tip.color = "black",
-  font = 1,
+  font = 3,
   show.node.label = FALSE,
   label.offset = 0.5
 )
@@ -44,7 +44,7 @@ if(!is.null(phy$node.label)) {
   root_index <- 1
   
   # Prepare x positions: shift root less far, others more
-  x_positions <- node_x - 18         # shift all internal nodes by 18 units left
+  x_positions <- node_x - 19         # shift all internal nodes by 18 units left
   x_positions[root_index] <- node_x[root_index] - 7  # shift root label only 6 units left
   
   # Add internal node labels with custom shifts
@@ -59,3 +59,4 @@ if(!is.null(phy$node.label)) {
 }
 
 dev.off()
+
